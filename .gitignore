@@ -1,0 +1,14 @@
+
+# Ignore Python Cache and Jupyter Checkpoints
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+*.ipynb
+
+# Ignore Virtual Environments
+venv/
+env/
+
+# CRITICAL: Do NOT ignore the artifacts folder or the model
+!artifacts/
+!artifacts/*.pkl
