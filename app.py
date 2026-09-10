@@ -34,8 +34,11 @@ SEGMENT_MAP = {
 def home():
     return render_template('index.html')
 
-@app.route('/predict', methods=['POST'])
+@app.route('/predict', methods=['GET','POST'])
 def predict():
+    if request.method == 'GET':
+        return render_template('index.html')
+        
     if full_pipeline is None:
         return render_template('index.html', prediction_text="Error: AI Brain not loaded.")
 
