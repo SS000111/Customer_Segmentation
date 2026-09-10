@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Retail AI Segmentation</title>
+    <title>Retail Customer AI Segmentation</title>
     <style>
         :root {
             --bg-color: #0f172a;
@@ -120,31 +120,31 @@
 </head>
 <body>
     <div class="container">
-        <h2>Customer Radar</h2>
+        <h2>Customer Data</h2>
         <p style="color: #64748b; margin-bottom: 2rem;">Enter customer metrics below to predict their loyalty segment.</p>
         
         <form action="/predict" method="post">
             <div class="input-group">
                 <label>Customer Age(18 to 70)</label>
-                <input type="number" step="any" name="age" placeholder="e.g. 15" required>
+                <input type="number" step="any" name="Age" placeholder="e.g. 15" required>
             </div>
 
             <div class="input-group">
                 <label>Annual Income</label>
-                <input type="number" step="any" name="annual_income" placeholder="e.g. 5" required>
+                <input type="number" step="any" name="Annual_Income" placeholder="e.g. $50000" required>
             </div>
 
             <div class="input-group">
                 <label>Spending_Score (1-100)</label>
-                <input type="number" step="any" name="Spending_score" placeholder="e.g. 1200.50" required>
+                <input type="number" step="any" name="Spending_Score" placeholder="e.g. 86" required>
             </div>
 
-            <button type="submit">Analyze Customer</button>
+            <button type="submit">Analyze Customer and predict customer segment</button>
         </form>
 
         {% if prediction_text %}
         <div class="result-box">
-            <div class="result-label">AI Classification</div>
+            <div class="result-label">AI Customer Classification</div>
             <div class="result-value">{{ prediction_text }}</div>
         </div>
         {% endif %}
