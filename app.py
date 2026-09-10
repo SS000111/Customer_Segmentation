@@ -49,7 +49,8 @@ def predict():
         input_vector = np.array([features])
         
         with parallel_backend('threading', n_jobs=1):
-            prediction_id = full_pipeline.predict(input_vector)
+            prediction_array = full_pipeline.predict(input_vector)
+            prediction_id = int(prediction_array[0])
             
         segment_name = SEGMENT_MAP.get(prediction_id, "Unknown Segment")
         
